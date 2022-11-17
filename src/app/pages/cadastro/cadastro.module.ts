@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FornecedorComponent } from './fornecedor/fornecedor.component';
 import {CardapioComponent} from "./cardapio/cardapio.component";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -11,7 +12,8 @@ import {CardapioComponent} from "./cardapio/cardapio.component";
     CardapioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class CadastroModule { }

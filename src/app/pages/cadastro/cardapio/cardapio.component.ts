@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cardapio.component.scss']
 })
 export class CardapioComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
