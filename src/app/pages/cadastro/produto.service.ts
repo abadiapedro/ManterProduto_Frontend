@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Produto} from "./cardapio/Produto";
+import {Produto} from "../Shared/Produto";
 
 @Injectable({
     providedIn: 'root',
@@ -14,7 +14,7 @@ export class ProdutoService {
 
     }
 
-    filtrar(object: Produto){
+  listar(object: Produto){
         return this.http.get<Produto>(this.produtoUrl);
     }
 

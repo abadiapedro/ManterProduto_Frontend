@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {ProdutoService} from "../produto.service";
+import {ProdutoService} from "../../produto.service";
+import {MatDialog} from "@angular/material/dialog";
+import {CardapioEditarComponent} from "../cardapio-editar/cardapio-editar.component";
 
 @Component({
   selector: 'app-cardapio-listar',
@@ -8,14 +10,16 @@ import {ProdutoService} from "../produto.service";
     styleUrls: ['./cardapio-listar.component.scss']
 })
 
-export class CardapioListarComponent{
+export class CardapioListarComponent implements OnInit{
   form: any;
-
   displayedColumns: string[] = ['id', 'nome', 'dataCadastro', 'tipoProduto', 'situacaoProduto', 'acoes'];
   dataSource =[];
 
-  constructor(private produtoService: ProdutoService) {
+  constructor(private produtoService: ProdutoService, public dialog: MatDialog) {
     this.montarFormGroup()
+  }
+  ngOnInit(): void {
+    this.listar()
   }
 
   montarFormGroup(){
@@ -25,15 +29,21 @@ export class CardapioListarComponent{
     });
   }
 
-  filtrar(){
+  listar(){
     console.log(this.form.value);
-    this.produtoService.filtrar(this.form.value).subscribe((data: any) => {
+    this.produtoService.listar(this.form.value).subscribe((data: any) => {
       this.dataSource = data.content;
     });
   }
   criar(){
-    this.produtoService.criar()
+    const modalCriar = this.dialog.open(CardapioEditarComponent, {
+      width: '1000px',
+      height: '500px',
+    });
 
+    modalCriar.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   relatorio(){
