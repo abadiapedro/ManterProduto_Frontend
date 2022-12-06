@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FornecedorComponent} from './fornecedor/fornecedor.component';
 import {CardapioListarComponent} from "./cardapio/cardapio-listar.component";
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -12,7 +11,6 @@ import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
-    FornecedorComponent,
     CardapioListarComponent,
   ],
   imports: [
@@ -26,4 +24,4 @@ import {MatButtonModule} from "@angular/material/button";
     MatButtonModule
   ]
 })
-export class CadastroModule { }
+export class CardapioModule { }
