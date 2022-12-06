@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {ProdutoService} from "../../produto.service";
+import {ProdutoService} from "../produto.service";
 import {MatDialog} from "@angular/material/dialog";
 import {CardapioEditarComponent} from "../cardapio-editar/cardapio-editar.component";
 
