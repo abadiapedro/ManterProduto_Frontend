@@ -2,7 +2,7 @@ import {Routes} from '@angular/router';
 import {LayoutComponent} from "../../layout/layout.component";
 import {FornecedorComponent} from "./fornecedor/fornecedor.component";
 import {HomeComponent} from "../home/home.component";
-import {CardapioComponent} from "./cardapio/cardapio.component";
+import {CardapioListarComponent} from "./cardapio/cardapio-listar.component";
 
 export const CadastroRoutes: Routes = [
   {
@@ -19,7 +19,7 @@ export const CadastroRoutes: Routes = [
       },
       {
         path: 'cardapio',
-        component: CardapioComponent,
+        component: CardapioListarComponent,
       }
     ]
   }

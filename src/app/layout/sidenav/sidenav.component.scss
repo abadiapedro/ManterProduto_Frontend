@@ -2,14 +2,9 @@
   height: 100vh;
 }
 
-.sidenav-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .sidenav {
   user-select: none;
+  background: #008DFF;
 }
 
 .sidenav-list {
@@ -20,13 +15,16 @@
 .full-width {
   width: 100%;
 }
+
 .menu-button {
   transition: 300ms ease-in-out;
   transform: rotate(0deg);
 }
+
 .menu-button.rotated {
   transform: rotate(180deg);
 }
+
 .submenu {
   overflow-y: hidden;
   transform: scaleY(0);
@@ -44,7 +42,8 @@
   justify-content: center;
   align-items: center;
   height: 75px;
-  background: lightblue;
+  background: #005FD7;
+
 }
 
 .sidenav-footer {
@@ -52,7 +51,7 @@
   justify-content: center;
   align-items: center;
   height: 50px;
-  background: lightblue;
+  background: #005FD7;
 }
 
 .menu-button {
