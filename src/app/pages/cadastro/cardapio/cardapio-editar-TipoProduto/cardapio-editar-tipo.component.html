@@ -1,0 +1,31 @@
+<div class="container">
+  <div fxLayout="row">
+    <h1>Incluindo Tipo de Produto</h1>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Geral">
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="60">
+          <mat-label>Nome</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+
+      </div>
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="60">
+          <mat-label>Descrição do Tipo de Produto</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+      </div>
+
+    </mat-tab>
+
+  </mat-tab-group>
+  <div dir="ltr" fxLayoutGap="20px">
+    <button mat-flat-button color="primary">Salvar</button>
+    <button mat-flat-button color="warn" style="color: white">Excluir</button>
+    <button mat-flat-button style=" background-color: #DEE3EA" >Voltar</button>
+  </div>
+</div>

@@ -3,6 +3,7 @@
     <h1>Incluindo Produto</h1>
   </div>
   <mat-tab-group>
+
     <mat-tab label="Geral">
       <div fxLayoutGap="20px">
         <mat-form-field appearance="outline" fxFlex="40">
@@ -15,28 +16,32 @@
           <input matInput>
           <mat-icon matSuffix>close</mat-icon>
         </mat-form-field>
-
       </div>
       <div fxLayoutGap="20px">
-        <button mat-raised-button color="primary" (click)="abrirModalIncluirTipoProduto()">Incluir Tipo de Produto</button>
-        <mat-form-field appearance="outline" fxFlex="30">
+        <button mat-raised-button color="primary" (click)="abrirModalIncluirTipoProduto()"fxFlex="30">Incluir Tipo de Produto</button>
+      </div>
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="40">
           <mat-label>Descrição do Produto</mat-label>
           <input matInput>
           <mat-icon matSuffix>close</mat-icon>
         </mat-form-field>
-        <mat-form-field appearance="outline" fxFlex="36">
-          <mat-label>Tipo do Produto</mat-label>
-          <input matInput>
-          <mat-icon matSuffix>close</mat-icon>
-        </mat-form-field>
-        <mat-form-field appearance="outline" fxFlex="20">
-          <input matInput placeholder="Ativo">
+        <mat-form-field appearance="fill" fxFlex="30">
+          <mat-label>Tipo do Produto</mat-label><!--Alterar para trazer do Tipo de Produto-->
+          <mat-select [(value)]="selected">
+            <mat-option>Vazio</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
           <mat-icon matSuffix>arrow</mat-icon>
         </mat-form-field>
+
+        <mat-slide-toggle [(ngModel)]="isChecked">Situação: {{isChecked}}</mat-slide-toggle><!--Alterar para trazer a situação do Produto-->
+
       </div>
 
     </mat-tab>
-
   </mat-tab-group>
   <div dir="ltr" fxLayoutGap="20px">
     <button mat-flat-button color="primary">Salvar</button>

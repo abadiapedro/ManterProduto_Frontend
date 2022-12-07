@@ -50,8 +50,15 @@ export class CardapioListarComponent implements OnInit{
 
   }
 
-  editar(object: any){
-    this.produtoService.editar()
+  editar(){
+    const modalCriar = this.dialog.open(CardapioEditarComponent, {
+      width: '1000px',
+      height: '500px',
+    });
+
+    modalCriar.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   excluir(object: any){
