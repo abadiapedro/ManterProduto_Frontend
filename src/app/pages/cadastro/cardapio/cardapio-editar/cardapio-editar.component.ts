@@ -41,4 +41,8 @@ export class CardapioEditarComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  close () : void {
+    this.dialog.closeAll();
+  }
 }

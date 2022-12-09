@@ -28,7 +28,8 @@
 		</div>
 
 		<div class="table-container">
-			<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 cardapio-table">
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 cardapio-table">
 
 				<ng-container matColumnDef="id">
 					<th mat-header-cell *matHeaderCellDef> Id </th>
@@ -58,20 +59,22 @@
 				<ng-container matColumnDef="acoes">
 					<th mat-header-cell *matHeaderCellDef class="acao-title"> Ações </th>
 					<td mat-cell *matCellDef="let element" class="acao-content">
-						<button mat-icon-button color="primary" (click)="editar()">
-							<mat-icon>edit</mat-icon>
+            <mat-slide-toggle (click)="excluir(element)"></mat-slide-toggle>
+						<button mat-icon-button color="primary" (click)="editar()"><mat-icon>edit</mat-icon>
 						</button>
-						<button mat-icon-button color="warn" (click)="excluir(element)">
-							<mat-icon>delete</mat-icon>
-						</button>
-					</td>
-				</ng-container>
+          </td>
+        </ng-container>
 
-				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-			</table>
-		</div>
-	</div>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <mat-paginator [length]="100"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[10, 25, 50]"
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
 </div>
 
 

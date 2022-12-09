@@ -26,5 +26,8 @@ export class CardapioEditarTipoComponent implements OnInit {
     this.tipoProdutoDataSource.data = ELEMENT_DATA;
   }
 
+  close () : void {
+    this.dialog.closeAll();
+  }
 
 }

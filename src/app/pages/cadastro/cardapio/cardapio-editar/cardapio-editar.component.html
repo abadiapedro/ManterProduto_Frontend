@@ -30,15 +30,12 @@
           <mat-label>Tipo do Produto</mat-label><!--Alterar para trazer do Tipo de Produto-->
           <mat-select [(value)]="selected">
             <mat-option>Vazio</mat-option>
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2">Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
+            <mat-option value="option1">Tipo 1</mat-option>
+            <mat-option value="option2">Tipo 2</mat-option>
+            <mat-option value="option3">Tipo 3</mat-option>
           </mat-select>
           <mat-icon matSuffix>arrow</mat-icon>
         </mat-form-field>
-
-        <mat-slide-toggle [(ngModel)]="isChecked">Situação: {{isChecked}}</mat-slide-toggle><!--Alterar para trazer a situação do Produto-->
-
       </div>
 
     </mat-tab>
@@ -46,6 +43,6 @@
   <div dir="ltr" fxLayoutGap="20px">
     <button mat-flat-button color="primary">Salvar</button>
     <button mat-flat-button color="warn" style="color: white">Excluir</button>
-    <button mat-flat-button style=" background-color: #DEE3EA" >Voltar</button>
+    <button mat-flat-button style=" background-color: #DEE3EA"  (click)="close()">Voltar</button>
   </div>
 </div>

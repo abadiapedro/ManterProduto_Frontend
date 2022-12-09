@@ -14,6 +14,7 @@ import {FlexModule} from "@angular/flex-layout";
 import {CardapioEditarTipoComponent} from "./cardapio/cardapio-editar-TipoProduto/cardapio-editar-tipo.component";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -21,20 +22,21 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     CardapioEditarComponent,
     CardapioEditarTipoComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTabsModule,
-    FlexModule,
-    MatSelectModule,
-    MatSlideToggleModule,
-    FormsModule,
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTableModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTabsModule,
+        FlexModule,
+        MatSelectModule,
+        MatSlideToggleModule,
+        FormsModule,
+        MatPaginatorModule,
+    ]
 })
 export class CadastroModule { }
