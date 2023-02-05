@@ -1,0 +1,104 @@
+<div class="container">
+  <div fxLayout="row">
+    <h1>Incluindo Fornecedores</h1>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Geral">
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="40">
+          <mat-label>Razão Social</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="30">
+          <mat-label>Nome Alternativo</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="30">
+          <mat-label>Nome Fantasia</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+      </div>
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="40">
+          <mat-label>CNPJ</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="30">
+          <mat-label>Indicador IE</mat-label>
+          <mat-select [(value)]="selected">
+            <mat-option value="contribuinte">Contribuinte</mat-option>
+            <mat-option value="naoContribuinte">Não Contribuinte</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="30">
+          <mat-label>Inscrição Estadual</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+      </div>
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="36">
+          <mat-label>Inscrição Municipal</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+      </div>
+    </mat-tab>
+    <mat-tab label="Endereço">
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="40">
+          <input matInput placeholder="Fornecedor">
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="40">
+          <input matInput placeholder="Cnpj">
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="20">
+          <input matInput placeholder="Ativo">
+          <mat-icon matSuffix>arrow</mat-icon>
+        </mat-form-field>
+      </div>
+    </mat-tab>
+    <mat-tab label="Contato">
+      <div fxLayoutGap="20px">
+        <button mat-raised-button color="primary" (click)="abrirModalSelecionaContatoMultiplo()">Incluir Colaboradores</button>
+        <mat-table [dataSource]="contatosDataSource" matSort matSortActive="nome" matSortDirection="asc" matSortDisableClear>
+          <ng-container>
+            <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+          </ng-container>
+          <ng-container>
+            <mat-header-cell *matHeaderCellDef>E-mail</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+          </ng-container>
+          <ng-container>
+            <mat-header-cell *matHeaderCellDef>Telefone</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.telefone}} </mat-cell>
+          </ng-container>
+          <ng-container>
+            <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-icon-button color="warn">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="contatosDisplayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: contatosDisplayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div dir="ltr" fxLayoutGap="20px">
+    <button mat-flat-button color="primary">Salvar</button>
+    <button mat-flat-button color="warn" style="color: white">Inativar</button>
+    <button mat-flat-button style=" background-color: #DEE3EA" (click)="close()">Voltar</button>
+  </div>
+</div>
+

@@ -15,12 +15,31 @@ import {CardapioEditarTipoComponent} from "./cardapio/cardapio-editar-TipoProdut
 import {MatSelectModule} from "@angular/material/select";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {FornecedorFiltrarComponent} from "./fornecedor/fornecedor-filtrar/fornecedor-filtrar.component";
+import {FornecedorEditarComponent} from "./fornecedor/fornecedor-editar/fornecedor-editar.component";
+import {FornecedorListarComponent} from "./fornecedor/fornecedor-listar/fornecedor-listar.component";
+import {ClienteService} from "./cliente/cliente.service";
+import {ClienteEditarComponent} from "./cliente/cliente-editar/cliente-editar.component";
+import {ClienteListarComponent} from "./cliente/cliente-listar/cliente-listar.component";
+import {EntradaEditarComponent} from "./entrada_estoque/entrada-editar/entrada-editar.component";
+import {EntradaListarComponent} from "./entrada_estoque/entrada-listar/entrada-listar.component";
+import {VendaEditarComponent} from "./vendas/venda-editar/venda-editar.component";
+import {VendaListarComponent} from "./vendas/venda-listar/venda-listar.component";
 
 @NgModule({
   declarations: [
     CardapioListarComponent,
     CardapioEditarComponent,
-    CardapioEditarTipoComponent
+    CardapioEditarTipoComponent,
+    FornecedorFiltrarComponent,
+    FornecedorEditarComponent,
+    FornecedorListarComponent,
+    ClienteEditarComponent,
+    ClienteListarComponent,
+    EntradaEditarComponent,
+    EntradaListarComponent,
+    VendaEditarComponent,
+    VendaListarComponent
   ],
     imports: [
         CommonModule,

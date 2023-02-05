@@ -1,21 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {ProdutoService} from "../produto.service";
+import {ClienteService} from "../cliente.service";
 import {MatDialog} from "@angular/material/dialog";
-import {CardapioEditarComponent} from "../cardapio-editar/cardapio-editar.component";
+import {ClienteEditarComponent} from "../cliente-editar/cliente-editar.component";
 
 @Component({
-  selector: 'app-cardapio-listar',
-  templateUrl: './cardapio-listar.component.html',
-  styleUrls: ['./cardapio-listar.component.scss']
+  selector: 'app-cliente-listar',
+  templateUrl: './cliente-listar.component.html',
+  styleUrls: ['./cliente-listar.component.scss']
 })
 
-export class CardapioListarComponent implements OnInit {
+export class ClienteListarComponent implements OnInit {
   form: any;
-  displayedColumns: string[] = ['id', 'nome', 'dataCadastro', 'tipoProduto', 'situacaoProduto', 'acoes'];
+  displayedColumns: string[] = ['id', 'tipoCliente', 'nomeCliente', 'nomeFantasia', 'cpfCnpj', 'acoes'];
   dataSource = [];
 
-  constructor(private produtoService: ProdutoService, public dialog: MatDialog) {
+  constructor(private clienteService: ClienteService, public dialog: MatDialog) {
     this.montarFormGroup()
   }
 
@@ -26,19 +26,19 @@ export class CardapioListarComponent implements OnInit {
   montarFormGroup() {
     this.form = new FormGroup({
       nome: new FormControl(''),
-      tipoProduto: new FormControl(''),
+      cpfCnpjs: new FormControl(''),
     });
   }
 
   listar() {
     console.log(this.form.value);
-    this.produtoService.listar(this.form.value).subscribe((data: any) => {
+    this.clienteService.listar(this.form.value).subscribe((data: any) => {
       this.dataSource = data.content;
     });
   }
 
   criar() {
-    const modalCriar = this.dialog.open(CardapioEditarComponent, {
+    const modalCriar = this.dialog.open(ClienteEditarComponent, {
       width: '1000px',
       height: '500px',
     });
@@ -53,7 +53,7 @@ export class CardapioListarComponent implements OnInit {
   }
 
   editar() {
-    const modalCriar = this.dialog.open(CardapioEditarComponent, {
+    const modalCriar = this.dialog.open(ClienteEditarComponent, {
       width: '1000px',
       height: '500px',
     });
@@ -64,7 +64,7 @@ export class CardapioListarComponent implements OnInit {
   }
 
   excluir(object: any) {
-    this.produtoService.excluir()
+    this.clienteService.excluir()
   }
 
 }
