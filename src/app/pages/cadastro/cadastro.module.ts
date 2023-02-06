@@ -25,6 +25,8 @@ import {EntradaEditarComponent} from "./entrada_estoque/entrada-editar/entrada-e
 import {EntradaListarComponent} from "./entrada_estoque/entrada-listar/entrada-listar.component";
 import {VendaEditarComponent} from "./vendas/venda-editar/venda-editar.component";
 import {VendaListarComponent} from "./vendas/venda-listar/venda-listar.component";
+import {UsuarioEditarComponent} from "./usuario/usuario-editar/usuario-editar.component";
+import {UsuarioListarComponent} from "./usuario/usuario-listar/usuario-listar.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {VendaListarComponent} from "./vendas/venda-listar/venda-listar.component
     EntradaEditarComponent,
     EntradaListarComponent,
     VendaEditarComponent,
-    VendaListarComponent
+    VendaListarComponent,
+    UsuarioEditarComponent,
+    UsuarioListarComponent
   ],
     imports: [
         CommonModule,

@@ -8,6 +8,7 @@ import {FornecedorFiltrarComponent} from "./fornecedor/fornecedor-filtrar/fornec
 import {ClienteListarComponent} from "./cliente/cliente-listar/cliente-listar.component";
 import {EntradaListarComponent} from "./entrada_estoque/entrada-listar/entrada-listar.component";
 import {VendaListarComponent} from "./vendas/venda-listar/venda-listar.component";
+import {UsuarioListarComponent} from "./usuario/usuario-listar/usuario-listar.component";
 
 export const CadastroRoutes: Routes = [
   {
@@ -37,6 +38,10 @@ export const CadastroRoutes: Routes = [
       {
         path: 'venda',
         component: VendaListarComponent,
+      },
+      {
+        path: 'usuario',
+        component: UsuarioListarComponent,
       }
     ]
   }

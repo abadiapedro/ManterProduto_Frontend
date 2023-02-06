@@ -1,0 +1,46 @@
+<div class="container">
+  <div fxLayout="row">
+    <h1>Incluindo Usuario</h1>
+  </div>
+  <mat-tab-group>
+
+    <mat-tab label="Geral">
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="40">
+          <mat-label>Nome do Produto</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="30">
+          <mat-label>Login</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div fxLayoutGap="20px">
+        <mat-form-field appearance="outline" fxFlex="40">
+          <mat-label>Situação</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>close</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" fxFlex="30">
+          <mat-label>Tipo do Produto</mat-label><!--Alterar para trazer do Tipo de Produto-->
+          <mat-select [(value)]="selected">
+            <mat-option>Vazio</mat-option>
+            <mat-option value="option1">Tipo 1</mat-option>
+            <mat-option value="option2">Tipo 2</mat-option>
+            <mat-option value="option3">Tipo 3</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>arrow</mat-icon>
+        </mat-form-field>
+      </div>
+
+    </mat-tab>
+  </mat-tab-group>
+  <div dir="ltr" fxLayoutGap="20px">
+    <button mat-flat-button color="primary">Salvar</button>
+    <button mat-flat-button color="warn" style="color: white">Excluir</button>
+    <button mat-flat-button style=" background-color: #DEE3EA"  (click)="close()">Voltar</button>
+  </div>
+</div>
