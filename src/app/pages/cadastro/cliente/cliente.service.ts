@@ -12,7 +12,7 @@ export class ClienteService {
 
   clienteUrl = 'http://localhost:8080/cliente';
 
-  criar() {
+  criar(object: Cliente) {
     this.http.post(this.clienteUrl, object).subscribe(data => {
       return data;
     }
@@ -22,7 +22,7 @@ export class ClienteService {
     return this.http.get<Cliente>(this.clienteUrl);
   }
 
-  editar() {
+  editar(object: Cliente) {
     this.http.put(this.clienteUrl, object).subscribe(data => {
       return data;
     }
