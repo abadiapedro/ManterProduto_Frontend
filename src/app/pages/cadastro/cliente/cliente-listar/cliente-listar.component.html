@@ -47,9 +47,9 @@
           <td mat-cell *matCellDef="let element"> {{element.tipoCliente.nome}} </td>
         </ng-container>
 
-				<ng-container matColumnDef="nome">
+				<ng-container matColumnDef="razaoSocial">
 					<th mat-header-cell *matHeaderCellDef> Razão Social </th>
-					<td mat-cell *matCellDef="let element"> {{element.nomeCliente}} </td>
+					<td mat-cell *matCellDef="let element"> {{element.razaoSocial}} </td>
 				</ng-container>
 
         <ng-container matColumnDef="nomeFantasia">
@@ -85,6 +85,7 @@
                    [pageSizeOptions]="[10, 25, 50]"
                    aria-label="Select page">
     </mat-paginator>
+
   </div>
 </div>
 

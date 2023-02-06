@@ -12,7 +12,7 @@ import {ClienteEditarComponent} from "../cliente-editar/cliente-editar.component
 
 export class ClienteListarComponent implements OnInit {
   form: any;
-  displayedColumns: string[] = ['id', 'tipoCliente', 'nomeCliente', 'nomeFantasia', 'cpfCnpj', 'acoes'];
+  displayedColumns: string[] = ['id', 'tipoCliente', 'razaoSocial', 'nomeFantasia', 'cpfCnpj', 'situacaoCliente', 'acoes'];
   dataSource = [];
 
   constructor(private clienteService: ClienteService, public dialog: MatDialog) {
@@ -25,7 +25,7 @@ export class ClienteListarComponent implements OnInit {
 
   montarFormGroup() {
     this.form = new FormGroup({
-      nome: new FormControl(''),
+      razaoSocial: new FormControl(''),
       cpfCnpjs: new FormControl(''),
     });
   }

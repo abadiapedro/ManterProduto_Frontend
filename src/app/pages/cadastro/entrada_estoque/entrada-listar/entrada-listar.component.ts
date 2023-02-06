@@ -5,14 +5,14 @@ import {MatDialog} from "@angular/material/dialog";
 import {EntradaEditarComponent} from "../entrada-editar/entrada-editar.component";
 
 @Component({
-  selector: 'app-cardapio-listar',
+  selector: 'app-entrada-listar',
   templateUrl: './entrada-listar.component.html',
     styleUrls: ['./entrada-listar.component.scss']
 })
 
 export class EntradaListarComponent implements OnInit{
   form: any;
-  displayedColumns: string[] = ['id', 'nome', 'dataCadastro', 'tipoProduto', 'situacaoProduto', 'acoes'];
+  displayedColumns: string[] = ['id', 'fornecedor', 'dataCadastro', 'situacaoProduto', 'tipoProduto', 'valorTotal', 'acoes'];
   dataSource =[];
 
   constructor(private produtoService: EntradaService, public dialog: MatDialog) {

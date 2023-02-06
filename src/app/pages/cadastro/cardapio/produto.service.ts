@@ -3,26 +3,28 @@ import {HttpClient} from '@angular/common/http';
 import {Produto} from "../../../shared/Produto";
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 
 export class ProdutoService {
-    constructor(private http: HttpClient) { }
-    produtoUrl = 'http://localhost:8080/produtos';
+  constructor(private http: HttpClient) {
+  }
 
-    criar(){
+  produtoUrl = 'http://localhost:8080/produtos';
 
-    }
+  criar() {
 
-  listar(object: Produto){
-        return this.http.get<Produto>(this.produtoUrl);
-    }
+  }
 
-    editar(){
+  listar(object: Produto) {
+    return this.http.get<Produto>(this.produtoUrl);
+  }
 
-    }
+  editar() {
 
-    excluir(){
+  }
 
-    }
+  excluir() {
+
+  }
 }
