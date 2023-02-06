@@ -12,7 +12,7 @@ import {UsuarioEditarComponent} from "../usuario-editar/usuario-editar.component
 
 export class UsuarioListarComponent implements OnInit{
   form: any;
-  displayedColumns: string[] = ['id', 'nome', 'dataCadastro', 'tipoProduto', 'situacaoProduto', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'dataCadastro', 'tipoUsuario', 'situacaoProduto', 'acoes'];
   dataSource =[];
 
   constructor(private vendaService: UsuarioService, public dialog: MatDialog) {
@@ -25,7 +25,7 @@ export class UsuarioListarComponent implements OnInit{
   montarFormGroup(){
     this.form = new FormGroup({
       nome: new FormControl(''),
-      tipoProduto: new FormControl(''),
+      tipoUsuario: new FormControl(''),
     });
   }
 
