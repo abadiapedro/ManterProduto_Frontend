@@ -13,7 +13,9 @@ export class ClienteService {
   clienteUrl = 'http://localhost:8080/cliente';
 
   criar() {
-
+    this.http.post(this.clienteUrl, object).subscribe(data => {
+      return data;
+    }
   }
 
   listar(object: Cliente) {
@@ -21,10 +23,14 @@ export class ClienteService {
   }
 
   editar() {
-
+    this.http.put(this.clienteUrl, object).subscribe(data => {
+      return data;
+    }
   }
 
-  excluir() {
-
+  excluir(object: Cliente) {
+    this.http.delete(this.clienteUrl + "/" + object.id).subscribe(data => {
+      return data;
+    }
   }
 }
