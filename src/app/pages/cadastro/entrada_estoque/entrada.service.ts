@@ -12,19 +12,25 @@ export class EntradaService {
 
   entradaUrl = 'http://localhost:8080/entrada';
 
-  criar() {
-
+  criar(object: Entrada) {
+    this.http.post(this.entradaUrl, object).subscribe(data => {
+      return data;
+    }
   }
 
   listar(object: Entrada) {
     return this.http.get<Entrada>(this.entradaUrl);
   }
 
-  editar() {
-
+  editar(object: Entrada) {
+    this.http.put(this.entradaUrl, object).subscribe(data => {
+      return data;
+    }
   }
 
-  excluir() {
-
+  excluir(object: Entrada) {
+    this.http.delete(this.entradaUrl + "/" + object.id).subscribe(data => {
+      return data;
+    }
   }
 }
